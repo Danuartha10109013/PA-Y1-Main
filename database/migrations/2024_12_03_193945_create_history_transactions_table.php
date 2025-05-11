@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b531ffd6cca95ea3c4aac712d08668099584e3e070ebe5cbc5547509f40fa435
-size 974
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('history_transactions', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->restrictOnUpdate()->restrictOnDelete();
+            $table->string('nomor_pinjaman')->unique();
+            $table->string('jenis_pinjaman')->nullable();
+            $table->decimal('amount', 15, 2)->nullable();
+            $table->string('status')->default('success');
+            $table->string('payment_proof')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('history_transactions');
+    }
+};

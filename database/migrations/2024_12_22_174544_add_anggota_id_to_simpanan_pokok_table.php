@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:89053e91a08d4f9b82cbe15b8e33ef3d41d61f1f7c23b6d3818c6acc2f7e01f4
-size 948
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class AddAnggotaIdToSimpananPokokTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('simpanan_pokok', function (Blueprint $table) {
+            $table->unsignedBigInteger('anggota_id')->nullable()->after('id')->comment('Foreign key ke tabel anggota');
+            $table->foreign('anggota_id')->references('id')->on('anggota')->onDelete('cascade')->onUpdate('cascade');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('simpanan_pokok', function (Blueprint $table) {
+            $table->dropForeign(['anggota_id']);
+            $table->dropColumn('anggota_id');
+        });
+    }
+}

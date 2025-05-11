@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:64b4ac88db74ee0d547bca2f7b6b089f1569cd399e6ed191b305ad1fe6c4bcc8
-size 685
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::table('simpanan_wajib', function (Blueprint $table) {
+            $table->string('no_simpanan_wajib', 50)->nullable()->after('bank')->comment('Nomor unik untuk simpanan wajib');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::table('simpanan_wajib', function (Blueprint $table) {
+            //
+        });
+    }
+};

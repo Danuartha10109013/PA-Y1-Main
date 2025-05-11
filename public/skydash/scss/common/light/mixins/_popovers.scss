@@ -1,3 +1,42 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0779ca298df5eac5dff405a408a7ead5e5dc56b11123616c7bc4b4129e9f6899
-size 684
+// popover color variations //
+
+@mixin popover-variant($color) {
+	border-color: $color;
+	.popover-header {
+		background: theme-color($color);
+		color: $white;
+		border-bottom: 0;
+	}
+	&.bs-popover-top {
+		.arrow {
+			&:before,
+			&:after {
+				border-top-color: theme-color($color);
+			}
+		}
+	}
+	&.bs-popover-right {
+		.arrow {
+			&:before,
+			&:after {
+				border-right-color: theme-color($color);
+			}
+		}
+	}
+	&.bs-popover-bottom {
+		.arrow {
+			&:before,
+			&:after {
+				border-bottom-color: theme-color($color);
+			}
+		}
+	}
+	&.bs-popover-left {
+		.arrow {
+			&:before,
+			&:after {
+				border-left-color: theme-color($color);
+			}
+		}
+	}
+}

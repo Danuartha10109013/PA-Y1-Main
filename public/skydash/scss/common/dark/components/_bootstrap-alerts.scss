@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:13f025a7555c007002fd5f182ab8e9cbd3ffaa97806b51c597551af27074ca52
-size 535
+/* Bootstrap Alerts */
+
+.alert {
+  font-size: $default-font-size;
+  i {
+    font-size: 1.25rem;
+    margin-right: 1.25rem;
+    vertical-align: middle;
+    line-height: .5;
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .alert-#{$color} {
+    @include alert-variant(theme-color($color), theme-color-level($color, 1), theme-color-level($color, 3));
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .alert-fill-#{$color} {
+    @include alert-variant(theme-color($color), theme-color($color), color(white));
+  }
+}

@@ -1,3 +1,46 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aa9c9440736c7ba8d0fe69d733eb93c139150a66d68e089b7f95002f962aa3e3
-size 1277
+/**
+ * Copyright (c) Tiny Technologies, Inc. All rights reserved.
+ * Licensed under the LGPL or a commercial license.
+ * For LGPL see License.txt in the project root for license information.
+ * For commercial licenses see https://www.tiny.cloud/
+ *
+ * Version: 5.7.0 (2021-02-10)
+ */
+(function () {
+    'use strict';
+
+    var global = tinymce.util.Tools.resolve('tinymce.PluginManager');
+
+    var register = function (editor) {
+      editor.addCommand('InsertHorizontalRule', function () {
+        editor.execCommand('mceInsertContent', false, '<hr />');
+      });
+    };
+
+    var register$1 = function (editor) {
+      editor.ui.registry.addButton('hr', {
+        icon: 'horizontal-rule',
+        tooltip: 'Horizontal line',
+        onAction: function () {
+          return editor.execCommand('InsertHorizontalRule');
+        }
+      });
+      editor.ui.registry.addMenuItem('hr', {
+        icon: 'horizontal-rule',
+        text: 'Horizontal line',
+        onAction: function () {
+          return editor.execCommand('InsertHorizontalRule');
+        }
+      });
+    };
+
+    function Plugin () {
+      global.add('hr', function (editor) {
+        register(editor);
+        register$1(editor);
+      });
+    }
+
+    Plugin();
+
+}());

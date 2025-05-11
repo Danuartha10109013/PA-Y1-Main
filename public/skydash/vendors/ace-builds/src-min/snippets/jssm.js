@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b091aa302a10716180d1e8ef750ca7c0316811f8feeecfda1ee5c737ee36a8b8
-size 339
+;                (function() {
+                    window.require(["ace/snippets/jssm"], function(m) {
+                        if (typeof module == "object" && typeof exports == "object" && module) {
+                            module.exports = m;
+                        }
+                    });
+                })();
+            

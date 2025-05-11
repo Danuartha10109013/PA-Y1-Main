@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:490efe60e501eb40392912026383fbf093310ad853e0d2797e7b78e98dd6551f
-size 353
+/* Toast */
+
+.jq-toast-wrap {
+    .jq-icon-success {
+        background-color: theme-color("success");
+    }
+    .jq-icon-info {
+        background-color: theme-color("info");
+    }
+    .jq-icon-warning {
+        background-color: theme-color("warning");
+    }
+    .jq-icon-error {
+        background-color: theme-color("danger");
+    }
+}

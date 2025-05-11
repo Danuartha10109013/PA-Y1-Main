@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:de261e03d88242fff780d780a531ccd97b9dfb975b384e86d779a9adedd37f82
-size 822
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\SimpananCategory;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class SimpananCategorySeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $simpanans = [
+            [
+                'name' => 'Simpanan Pokok',
+            ],
+            [
+                'name' => 'Simpanan Wajib',
+            ],
+            [
+                'name' => 'Simpanan Sukarela',
+            ],
+            [
+                'name' => 'Simpanan Berjangka',
+            ],
+        ];
+        foreach ($simpanans as $simpanan) {
+            SimpananCategory::insert([
+                'name' => $simpanan['name'],
+            ]);
+        }
+    }
+}

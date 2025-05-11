@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5911ff7c931c6698b678d7838343a6e6b9c3a8c32246091a3fe817362241ee8c
-size 489
+<?php
+
+namespace App\Exports;
+
+use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Concerns\FromView;
+
+class SimpananEkport implements FromView
+{
+    protected $data;
+    protected $type;
+
+    public function __construct($data, $type)
+    {
+        $this->data = $data;
+        $this->type = $type;
+    }
+
+    public function view(): View
+    {
+        return view('exports.simpanan-excel', [
+            'data' => $this->data,
+            'type' => $this->type,
+        ]);
+    }
+}

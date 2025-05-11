@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c8a00bcd856ccfd501073b7fe1159a4599df04088d4330b2e926534c3e0b9fba
-size 405
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class OrderModel extends Model
+{
+    use HasFactory;
+    protected $table = "order_models";
+    protected $fillable = [
+        'angota_id',
+        'amount',
+        'simpanan_id',
+        'status',
+        'jenis',
+        'updated_at',
+        'created_at',
+        
+    ];
+}

@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:35dd4b179ca792e71eed223dcae6277bf7ee2ce8b07a8f9afbeacbd241dc25c0
-size 137
+//Badge Mixins
+
+// Badge outlined variations
+@mixin badge-outline-variations($color) {
+	color: $color;
+	border: 1px solid $color;
+}

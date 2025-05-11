@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6a5b910641e963378b545383f93997047e76f808eaf8584fc4f0bb78a268263e
-size 342
+;                (function() {
+                    window.require(["ace/snippets/crystal"], function(m) {
+                        if (typeof module == "object" && typeof exports == "object" && module) {
+                            module.exports = m;
+                        }
+                    });
+                })();
+            

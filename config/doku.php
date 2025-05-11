@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:161635215c515cd9c8c80a40b91d7cf33d2ab1a7dd53af74391a580b77cfd304
-size 272
+<?php
+
+return [
+    'client_id' => env('DOKU_CLIENT_ID'),
+    'secret_key' => env('DOKU_SECRET_KEY'),
+    'sandbox_url' => env('DOKU_SANDBOX_URL'),
+    'production_url' => env('DOKU_PRODUCTION_URL'),
+    // 'is_production' => env('DOKU_IS_PRODUCTION', false),
+];

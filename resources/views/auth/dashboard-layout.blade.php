@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:43fb9f3f271f27bc617565458dc6f763eaefe665d52027df6fde7ee39fff44e4
-size 780
+<!DOCTYPE html>
+<html lang="en">
+
+@include('layouts.partials.meta')
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper mt-5">
+            <!-- partial:partials/_sidebar.html -->
+
+
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper pt-3">
+                    @yield('content')
+                </div>
+                @include('layouts.partials.footer')
+            </div>
+            <!-- main-panel ends -->
+        </div>
+    </div>
+    <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    @include('layouts.partials.script')
+</body>
+
+</html>

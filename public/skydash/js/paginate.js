@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:21544db4b99623ba98acece9e76648070dce75c80a4f9e4d38e4574b181290e5
-size 513
+(function($) {
+  'use strict';
+
+  if ($('#pagination-demo').length) {
+    $('#pagination-demo').twbsPagination({
+      totalPages: 35,
+      visiblePages: 7,
+      onPageClick: function(event, page) {
+        $('#page-content').text('Page ' + page);
+      }
+    });
+  }
+
+  if ($('.sync-pagination').length) {
+    $('.sync-pagination').twbsPagination({
+      totalPages: 20,
+      onPageClick: function(evt, page) {
+        $('#content').text('Page ' + page);
+      }
+    });
+  }
+
+})(jQuery);

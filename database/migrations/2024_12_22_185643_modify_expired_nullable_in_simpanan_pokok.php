@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f3491751e4150c8d58a599b7ddbc841d9167674507dd35df6a182f68975a0361
-size 750
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class ModifyExpiredNullableInSimpananPokok extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('simpanan_pokok', function (Blueprint $table) {
+            $table->timestamp('expired')->nullable()->change();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('simpanan_pokok', function (Blueprint $table) {
+            $table->timestamp('expired')->nullable(false)->change();
+        });
+    }
+}

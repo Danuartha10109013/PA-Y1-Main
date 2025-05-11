@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d11aa4793e26df062104882f7e6ad846891bb52b01cc24ab4e2e32e3c433bd3a
-size 824
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use App\Models\PinjamanCategory;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+class PinjamanCategorySeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $loans = [
+            [
+                'name' => 'Pinjaman Regular',
+            ],
+            [
+                'name' => 'Pinjaman Emergency',
+            ],
+            [
+                'name' => 'Pinjaman Tanpa Anggunan',
+            ],
+            [
+                'name' => 'Pinjaman dengan Anggunan',
+            ],
+        ];
+        foreach ($loans as $loan) {
+            PinjamanCategory::insert([
+                'name' => $loan['name'],
+            ]);
+        }
+    }
+}

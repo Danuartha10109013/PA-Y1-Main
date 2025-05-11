@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c28bf77b61f315c56823244c239068f1b8d435e8bd21c58e8a4febac49a32293
-size 500
+define("ace/snippets/razor",["require","exports","module"],function(e,t,n){"use strict";t.snippetText="snippet if\n(${1} == ${2}) {\n	${3}\n}",t.scope="razor"});                (function() {
+                    window.require(["ace/snippets/razor"], function(m) {
+                        if (typeof module == "object" && typeof exports == "object" && module) {
+                            module.exports = m;
+                        }
+                    });
+                })();
+            

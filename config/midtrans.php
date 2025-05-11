@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9dac5089135c702f10e14f8564bca44c583bffbb80f4c2c0bba0c0fc09e799ff
-size 247
+<?php
+return [
+    'server_key'    => env('MIDTRANS_SERVER_KEY'),
+    'client_key'    => env('MIDTRANS_CLIENT_KEY'),
+    'is_production' => env('MIDTRANS_IS_PRODUCTION', false),
+    'is_sanitized'  => true,
+    'is_3ds'        => true,
+];

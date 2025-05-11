@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:23af87a067ca57dcd5262d536f9b60f57394665a11cb7bfdab028d31e32f0a14
-size 341
+;                (function() {
+                    window.require(["ace/snippets/groovy"], function(m) {
+                        if (typeof module == "object" && typeof exports == "object" && module) {
+                            module.exports = m;
+                        }
+                    });
+                })();
+            

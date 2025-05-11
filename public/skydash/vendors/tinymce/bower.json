@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7f211bcf9f1f8342b42a3e5f9f7cd3665ecf665fe5d374a265f82cb5683f5515
-size 373
+{
+	"name": "tinymce",
+	"description": "Web based JavaScript HTML WYSIWYG editor control.",
+	"license": "LGPL-2.1",
+	"keywords": [
+		"editor",
+		"wysiwyg",
+		"tinymce",
+		"richtext",
+		"javascript",
+		"html"
+	],
+	"homepage": "http://www.tinymce.com",
+	"ignore": [
+		"readme.md",
+		"composer.json",
+		"package.json",
+		".npmignore",
+		"changelog.txt"
+	]
+}

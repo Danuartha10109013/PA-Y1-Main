@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b616f80d45848ffb1c9e5cfc1323d514e51219902c23e89f50ace06154b8fbc2
-size 223
+// Exports the "colorpicker" plugin for usage with module loaders
+// Usage:
+//   CommonJS:
+//     require('tinymce/plugins/colorpicker')
+//   ES2015:
+//     import 'tinymce/plugins/colorpicker'
+require('./plugin.js');

@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7e6b938cdb43751899d3c69211a25cd8637ddbf70addd853317e301b2a9845e6
-size 368
+<?php
+
+namespace App\Models;
+
+use App\Models\SubMenu;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+class Menu extends Model
+{
+    use HasFactory;
+
+    public function subMenu(): HasMany
+    {
+        return $this->hasMany(SubMenu::class);
+    }
+}

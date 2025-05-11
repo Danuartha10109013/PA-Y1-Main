@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7382cbdf507aa3d180e70f56f2c016fdbcc68f86b39f147dda4527457333998f
-size 199
+// Exports the "toc" plugin for usage with module loaders
+// Usage:
+//   CommonJS:
+//     require('tinymce/plugins/toc')
+//   ES2015:
+//     import 'tinymce/plugins/toc'
+require('./plugin.js');

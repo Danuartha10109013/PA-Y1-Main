@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d5e7d955850e4ec0e19a02c322b7436bec58e2d87d5a9bb3ee5ed682d9732527
-size 651
+/* Tooltips */
+
+.tooltip-static-demo {
+	.tooltip {
+		position: relative;
+		display: inline-block;
+		opacity: 1;
+		margin: 0 10px 10px 0;
+		z-index: 10;
+	}
+	.bs-tooltip-bottom-demo,
+	.bs-tooltip-top-demo {
+		.arrow {
+			left: 50%;
+		}
+	}
+	.bs-tooltip-right-demo,
+	.bs-tooltip-left-demo {
+		.arrow {
+			&:before {
+				top: calc((100%-#{$tooltip-arrow-width})/2);				
+			}
+		}
+	}
+}
+
+.tooltip {
+	font-size: $tooltip-font-size;
+	min-width: 5.625rem;
+	.tooltip-inner {
+		font-weight: 400;
+	}
+	z-index: 1029;
+}
+
+@each $color, $value in $theme-colors {
+	.tooltip-#{$color} {
+	  @include tooltip-variant($color);
+	}
+}
+  

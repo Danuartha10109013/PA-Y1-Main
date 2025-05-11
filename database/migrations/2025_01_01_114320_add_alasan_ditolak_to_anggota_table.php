@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1f6c720a84aa8eceef38138d9bf6d7ee66363829333bc834f804f203adb8446c
-size 692
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class AddAlasanDitolakToAnggotaTable extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up()
+    {
+        Schema::table('anggota', function (Blueprint $table) {
+            $table->string('alasan_ditolak')->nullable()->after('status_manager'); // Kolom dapat null
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down()
+    {
+        Schema::table('anggota', function (Blueprint $table) {
+            $table->dropColumn('alasan_ditolak');
+        });
+    }
+}

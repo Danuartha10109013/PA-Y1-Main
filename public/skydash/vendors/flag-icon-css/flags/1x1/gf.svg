@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6317fe7bab2d908382c8f6a5ab0eeb3748a75b564cc348a6e542b8e486e5dd92
-size 299
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-gf" viewBox="0 0 512 512">
+  <g fill-rule="evenodd" stroke-width="1pt">
+    <path fill="#fff" d="M0 0h512v512H0z"/>
+    <path fill="#00267f" d="M0 0h170.7v512H0z"/>
+    <path fill="#f31830" d="M341.3 0H512v512H341.3z"/>
+  </g>
+</svg>

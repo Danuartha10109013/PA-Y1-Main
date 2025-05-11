@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0ec04080827ac8abb94e1c5d487574c69c8fa36d42277c7e0f9aa31bd3b2a47c
-size 169
+@import "../common/light/common";
+@import "variables";
+@import "vertical-wrapper";
+@import "sidebar";
+@import "navbar";
+@import "layouts";
+@import "settings-panel"

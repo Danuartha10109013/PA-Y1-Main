@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4ceab11badeabf42c9fefccbc614e3d663e393f9cb68d96fa757f3a1ffa92998
-size 482
+@if (auth()->user()->roles == 'ketua')
+    @extends('layouts.dashboard-layout')
+    @section('title', $title)
+    @section('content')
+        @if (session('swal'))
+            <script>
+                Swal.fire(@json(session('swal')));
+            </script>
+        @endif
+
+        <div class="content-background" style="background: white">
+            @include('layouts.partials.pinjaman.emergency')
+        </div>
+        <x-script-ketua />
+    @endsection
+@endif

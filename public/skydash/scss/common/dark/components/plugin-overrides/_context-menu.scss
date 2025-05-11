@@ -1,3 +1,60 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5eae4f0a565453a7e3d5ca2ea0af89e1453d9aa798f210a3eace117360adbdbe
-size 1099
+/* Context Menu */
+
+.context-menu-icon {
+  &:before {
+    color: $body-color;
+    font: normal normal normal 15px/1 "themify";
+  }
+  &.context-menu-icon-cut {
+    &:before {
+      content: '\e613';
+    }
+  }
+  &.context-menu-icon-edit {
+    &:before {
+      content: '\e61c';
+    }
+  }
+  &.context-menu-icon-copy {
+    &:before {
+      content: '\e6a3';
+    }
+  }
+  &.context-menu-icon-paste {
+    &:before {
+      content: '\e6c8';
+    }
+  }
+  &.context-menu-icon-delete {
+    &:before {
+      content: '\e605';
+    }
+  }
+  &.context-menu-icon-quit {
+    &:before {
+      content: '\e646';
+    }
+  }
+}
+.context-menu-list {
+  background: $card-bg;
+  box-shadow: none;
+  border: 1px solid $border-color;
+  .context-menu-item {
+    background: $card-bg;
+    span {
+      color: $body-color;
+      font-size: .75rem;
+      font-weight: 600;
+    }
+    &.context-menu-hover {
+      background: rgba($white, .3);
+      span {
+        color: $white;
+      }
+    }
+  }
+  .context-menu-separator {
+    border-bottom: 1px solid $border-color;
+  }
+}

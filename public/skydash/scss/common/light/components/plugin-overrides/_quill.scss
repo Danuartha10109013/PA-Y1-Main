@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d15e23015123f73ba2a5d7e3582de2ca0aeb9d94c4de4cabd2626596b92fafdc
-size 154
+/* Quill Editor */
+
+.quill-container {
+  height: 300px;
+}
+.ql-toolbar,
+.quill-container {
+  &.ql-snow {
+    border-color: $border-color;
+  }
+}

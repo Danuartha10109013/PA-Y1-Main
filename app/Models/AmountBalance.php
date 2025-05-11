@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:de1200ee882fac3ef1ff315583fab884e6c0ceafb7af4c1c463580d6705dd7ee
-size 948
+<?php
+
+namespace App\Models;
+
+use App\Models\User;
+use App\Models\PinjamanAngunan;
+use App\Models\PinjamanEmergency;
+use App\Models\PinjamanNonAngunan;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+
+class AmountBalance extends Model
+{
+    protected $guarded = ['id'];
+
+    use HasFactory;
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function pinjamanEmergency(): BelongsTo
+    {
+        return $this->belongsTo(PinjamanEmergency::class);
+    }
+
+    public function pinjamanAngunan(): BelongsTo
+    {
+        return $this->belongsTo(PinjamanAngunan::class);
+    }
+
+    public function pinjamanNonAnguna(): BelongsTo
+    {
+        return $this->belongsTo(PinjamanNonAngunan::class);
+    }
+}

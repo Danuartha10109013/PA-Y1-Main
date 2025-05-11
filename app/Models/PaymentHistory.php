@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ce58515f2fde3a4d3c681ac2381e0b990733a6e8c5dcf931cbfae1510f658962
-size 377
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class PaymentHistory extends Model
+{
+    use HasFactory;
+
+    protected $table = 'payment_histories';
+    protected $fillable = ['invoice_number', 'amount', 'nama', 'email', 'payment_method', 'payment_url','jenis_simpanan', 'status'];
+}

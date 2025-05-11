@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f2090c18214e4019bb04a42f7cb5d4416c82f33bc43eebff7ba077dbe9072cb7
-size 612
+<?php
+
+namespace App\Models;
+
+use App\Models\User;
+use App\Models\PengajuanPinjaman;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+class SalaryStatus extends Model
+{
+    use HasFactory;
+    protected $guarded = ['id'];
+    protected $with = ['user', 'pinjaman'];
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function pinjaman(): BelongsTo
+    {
+        return $this->belongsTo(PengajuanPinjaman::class);
+    }
+    
+}

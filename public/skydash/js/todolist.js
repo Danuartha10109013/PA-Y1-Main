@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c30181ce11bd473b903d2f5ad7f7885f0db3bb9d720498d18f19c63e917c2a6b
-size 985
+(function($) {
+  'use strict';
+  $(function() {
+    var todoListItem = $('.todo-list');
+    var todoListInput = $('.todo-list-input');
+    $('.todo-list-add-btn').on("click", function(event) {
+      event.preventDefault();
+
+      var item = $(this).prevAll('.todo-list-input').val();
+
+      if (item) {
+        todoListItem.append("<li><div class='form-check'><label class='form-check-label'><input class='checkbox' type='checkbox'/>" + item + "<i class='input-helper'></i></label></div><i class='remove ti-close'></i></li>");
+        todoListInput.val("");
+      }
+
+    });
+
+    todoListItem.on('change', '.checkbox', function() {
+      if ($(this).attr('checked')) {
+        $(this).removeAttr('checked');
+      } else {
+        $(this).attr('checked', 'checked');
+      }
+
+      $(this).closest("li").toggleClass('completed');
+
+    });
+
+    todoListItem.on('click', '.remove', function() {
+      $(this).parent().remove();
+    });
+
+  });
+})(jQuery);

@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1b7026fba3d9cf4ec58fc00a41bd569dccde3408f58c99fab99ed1da29c12ec7
-size 11
+*.sqlite*

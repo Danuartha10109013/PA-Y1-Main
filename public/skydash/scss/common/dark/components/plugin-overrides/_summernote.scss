@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f0d8da81db660cf800ea227bc9bee1ba2319bbd785ff914398cdd856bbb09bca
-size 290
+/* Summernote Editor */
+
+.note-editor{
+  &.note-frame {
+    border: 1px solid $border-color;
+    .note-editing-area {
+      .note-editable {
+        background: transparent;
+        color: $input-color;
+      }
+    }
+  }
+}
+.note-popover {
+  border: 1px solid $border-color;
+}

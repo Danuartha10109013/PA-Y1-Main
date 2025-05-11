@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:637a608f9e69e4788fb3539460ccc75ddaeab878b3c23c7c212e9075fe6af27e
-size 375
+/* Pricing table */
+
+.pricing-table {
+  .pricing-card {
+    .pricing-card-body {
+      padding: 50px 56px 43px 56px;
+      .plan-features {
+        width: 100%;
+        margin-bottom: 32px;
+        li {
+          text-align: left;
+          padding: 4px 0px;
+          font-weight: 400;
+          font-size: $default-font-size;
+        }
+      }
+    }
+  }
+}

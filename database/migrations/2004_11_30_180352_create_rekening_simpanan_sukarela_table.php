@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5befd80253ee2d5d8f0ddd6742e60f6761decec407ec8c1fd94f6e81d7e2b34b
-size 1126
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateRekeningSimpananSukarelaTable extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up()
+    {
+        Schema::create('rekening_simpanan_sukarela', function (Blueprint $table) {
+            $table->id(); // Primary Key
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade'); // Relasi ke tabel users
+            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending'); // Status utama rekening
+            $table->enum('approval_manager', ['pending', 'approved', 'rejected'])->default('pending'); // Approval Manager
+            $table->enum('approval_ketua', ['pending', 'approved', 'rejected'])->default('pending'); // Approval Ketua
+            $table->timestamps(); // created_at dan updated_at
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down()
+    {
+        Schema::dropIfExists('rekening_simpanan_sukarela');
+    }
+}

@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c6ff9038ac260539c3a2d58523a06703a37331fbf005beac7674080bde82ca32
-size 945
+<?php
+
+namespace App\Mail;
+
+use Illuminate\Bus\Queueable;
+use Illuminate\Mail\Mailable;
+use Illuminate\Queue\SerializesModels;
+
+class ApprovalNotificationMail extends Mailable
+{
+    use Queueable, SerializesModels;    
+
+    public $user;
+    public $simpanan;
+    public $snapToken;
+
+    public function __construct($user, $simpanan, $snapToken)
+    {
+        $this->user = $user;
+        $this->simpanan = $simpanan;
+        $this->snapToken = $snapToken;
+    }
+
+    public function build()
+    {
+        return $this->subject('Pengajuan Simpanan Disetujui')
+            ->view('email.notification_approval')
+            ->with([
+                'userName' => $this->user->name,
+                'noSimpanan' => $this->simpanan->no_simpanan,
+                'virtualAccount' => $this->simpanan->virtual_account,
+                'expiredAt' => $this->simpanan->expired_at,
+                'snapToken' => $this->snapToken,
+            ]);
+    }
+}

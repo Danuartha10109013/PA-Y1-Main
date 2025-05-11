@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d0349dd41ab635a604e91ac5d22e899474673bae429a3f978ed30b7013e01bfb
-size 755
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('pinjaman_angunans', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->restrictOnUpdate()->restrictOnDelete();
+            $table->integer('amount');
+            $table->string('status');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('pinjaman_angunans');
+    }
+};

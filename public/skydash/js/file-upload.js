@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e1329fbb6fc0fa4f546adb9f5e85ed75266ac92aea428fb36a213c1177755ca8
-size 409
+(function($) {
+  'use strict';
+  $(function() {
+    $('.file-upload-browse').on('click', function() {
+      var file = $(this).parent().parent().parent().find('.file-upload-default');
+      file.trigger('click');
+    });
+    $('.file-upload-default').on('change', function() {
+      $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+    });
+  });
+})(jQuery);

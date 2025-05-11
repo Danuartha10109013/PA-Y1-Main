@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a88b53d5d00ed23f57f49123b52e853c3079d1dccad9d71e794aa1dbb056a3e7
-size 564
+// Tooltip color  variations
+
+@mixin tooltip-variant($color) {
+	.tooltip-inner {
+		background:  theme-color($color);
+		color: $white;
+	}
+	&.bs-tooltip-top {
+    .arrow::before {
+      border-top-color: theme-color($color);
+    }
+  }
+  &.bs-tooltip-right {
+    .arrow::before {
+      border-right-color: theme-color($color);
+    }
+  }
+  &.bs-tooltip-bottom {
+    .arrow::before {
+      border-bottom-color: theme-color($color);
+    }
+  }
+  &.bs-tooltip-left {
+    .arrow::before {
+      border-left-color: theme-color($color);
+    }
+  }
+}

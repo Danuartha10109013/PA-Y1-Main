@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dc148382720065f6f5a5088c9bf83c408fc7da7e4e63262809cd3d9b9eb22157
-size 767
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class ModifyVirtualAccountNullableInSimpananPokok extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('simpanan_pokok', function (Blueprint $table) {
+            $table->string('virtual_account')->nullable()->change();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('simpanan_pokok', function (Blueprint $table) {
+            $table->string('virtual_account')->nullable(false)->change();
+        });
+    }
+}

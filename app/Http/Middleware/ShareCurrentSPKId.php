@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0674f5bacbfc65a256d5994da7047b75150d4bdbc222b801538a63d14144fc9d
-size 611
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;
+use App\Models\PengajuanPinjaman;
+use Symfony\Component\HttpFoundation\Response;
+
+class ShareCurrentSPKId
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     */
+    public function handle($request, Closure $next)
+{
+    $currentSpkId = PengajuanPinjaman::latest('id')->value('id'); // Contoh mengambil ID terakhir
+    view()->share('currentSpkId', $currentSpkId);
+
+    return $next($request);
+}
+
+}

@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:063e3d4c0e4b8ec3746fb8bd05ef6fd627618ee253ba05456e84bf8c1139dbd2
-size 564
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+public function up()
+{
+    Schema::table('simpanan_wajib', function (Blueprint $table) {
+        $table->string('image')->nullable(); // Ganti 'column_name' dengan nama kolom terakhir atau kolom tertentu.
+    });
+}
+
+public function down()
+{
+    Schema::table('users', function (Blueprint $table) {
+        $table->dropColumn('image');
+    });
+}
+
+};

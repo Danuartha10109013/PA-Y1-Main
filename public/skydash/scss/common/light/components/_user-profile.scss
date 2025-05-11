@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dd6d2ec7d296762479182832181a5bd0bf67ccbaca3aa3471fbdc936fc3020d3
-size 265
+.profile-navbar {
+	.nav-item {
+		.nav-link {
+			color: $body-color;
+			&.active {
+				color: theme-color(primary);
+			}
+			i {
+				font-size: 1.25rem;
+			}
+		}
+	}
+}
+.profile-feed-item {
+	padding: 1.5rem 0;
+	border-bottom: 1px solid $border-color;	
+}

@@ -1,3 +1,50 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2297c628da5666c9b8fb70985734d798baf41737abf937b87533de5319ffd5a2
-size 1075
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Tenor;
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+class TenorSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $tenors = [
+            [
+                'tenor' => '3 Bulan',
+            ],
+            [
+                'tenor' => '6 Bulan',
+            ],
+            [
+                'tenor' => '9 Bulan',
+            ],
+            [
+                'tenor' => '12 Bulan',
+            ],
+            [
+                'tenor' => '15 bulan',
+            ],
+            [
+                'tenor' => '18 bulan',
+            ],
+            [
+                'tenor' => '21 bulan',
+            ],
+            [
+                'tenor' => '24 bulan',
+            ]
+        ];
+
+        foreach ($tenors as $tenor) {
+            Tenor::create([
+                'tenor' => $tenor['tenor'],
+                'uuid' => uuid_create()
+            ]);
+        }
+    }
+}

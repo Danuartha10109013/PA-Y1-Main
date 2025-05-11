@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:166b056d8e716bddb5e63fda24afb5ff98c6e128d94efc6c065f94673f748dae
-size 246
+(function($) {
+  'use strict';
+
+  if ($(".js-example-basic-single").length) {
+    $(".js-example-basic-single").select2();
+  }
+  if ($(".js-example-basic-multiple").length) {
+    $(".js-example-basic-multiple").select2();
+  }
+})(jQuery);

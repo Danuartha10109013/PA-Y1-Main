@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:82d569ac0cf4ba3c05d136044217d4a89ca3afd34b2e2a67365002c3f6262cb3
-size 726
+/* Flip square */
+
+  .flip-square-loader{
+    -webkit-perspective: 120px;
+    -moz-perspective: 120px;
+    -ms-perspective: 120px;
+    perspective: 120px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  .flip-square-loader:before{
+    content: "";
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(theme-color(success), .7);
+    animation: flip 1s infinite;
+  }
+  
+  @keyframes flip {
+    0% {
+      transform: rotate(0);
+    }
+  
+    50% {
+      transform: rotateY(180deg);
+    }
+  
+    100% {
+      transform: rotateY(180deg)  rotateX(180deg);
+    }
+  }

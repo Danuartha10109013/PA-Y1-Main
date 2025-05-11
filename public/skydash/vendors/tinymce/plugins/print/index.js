@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:18fd02f098c8baf140ec625c582fec2d92de492b65bf30ce74ac57ccf0a4862d
-size 205
+// Exports the "print" plugin for usage with module loaders
+// Usage:
+//   CommonJS:
+//     require('tinymce/plugins/print')
+//   ES2015:
+//     import 'tinymce/plugins/print'
+require('./plugin.js');

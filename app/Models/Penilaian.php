@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e82c3c10bd43d6010b8edd9f6574666c3c6bd3fe63f2efce396d24af1d344947
-size 845
+<?php
+
+namespace App\Models;
+
+use App\Models\User;
+use App\Models\Kriteria;
+use App\Models\PengajuanPinjaman;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+class Penilaian extends Model
+{
+    use HasFactory;
+    protected $fillable = [
+        'uuid',
+        'pengajuan_pinjamans_id',
+        'score',
+        'level',
+    ];
+    
+
+    public function getRouteKeyName()
+    {
+        return 'uuid';
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id'); // Pastikan nama kolom foreign key benar
+    }
+    
+
+    public function pinjamans(): BelongsTo
+    {
+        return $this->belongsTo(PengajuanPinjaman::class, 'pengajuan_pinjamans_id');
+    }
+}

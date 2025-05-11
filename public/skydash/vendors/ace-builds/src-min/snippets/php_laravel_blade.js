@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:176947fd107c2737408b22c4cb28936881d5a87117fea47293e76daa168fecf0
-size 352
+;                (function() {
+                    window.require(["ace/snippets/php_laravel_blade"], function(m) {
+                        if (typeof module == "object" && typeof exports == "object" && module) {
+                            module.exports = m;
+                        }
+                    });
+                })();
+            

@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9735a0c7962185564d0ca2ae180baeaccea3ddb02f82cdc4c907b5da7c0fe9dc
-size 713
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class PenarikanBerjangka extends Model
+{
+    use HasFactory;
+
+    protected $table = 'penarikan_berjangka'; // Nama tabel di database
+
+    protected $fillable = [
+        'no_penarikan',
+        'user_id',
+        'bank',
+        'nominal',
+        'status_manager',
+        'status_ketua',
+        'otp_code',
+        'otp_expired_at',
+    ];
+
+    /**
+     * Relasi ke tabel Users.
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+}

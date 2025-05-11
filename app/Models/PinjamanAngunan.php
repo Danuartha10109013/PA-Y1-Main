@@ -1,3 +1,46 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b887374bfad888c302fa4030f82fe0ba9ac1814cfb89592a98e1e38792961e19
-size 1152
+<?php
+
+namespace App\Models;
+
+use App\Models\User;
+use App\Models\Tenor;
+use App\Models\AmountBalance;
+use App\Models\VirtualAccount;
+use App\Models\PengajuanPinjaman;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+class PinjamanAngunan extends Model
+{
+    use HasFactory;
+
+    public const ANGUNAN_OPTIONS = ['SERTIFIKAT TANAH','SERTIFIKAT RUMAH','BPKB KENDARAAN','SURAT BERHARGA LAINNYA'];
+
+    protected $guarded = ['id'];
+    protected $with = ['user', 'tenor', 'virtualAccount'];
+
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function tenor(): BelongsTo
+    {
+        return $this->belongsTo(Tenor::class, 'tenor_id');
+    }
+
+    // Di model PinjamanEmergency
+    public function virtualAccount()
+    {
+        return $this->belongsTo(VirtualAccount::class);
+    }
+
+    public function pinjaman(): BelongsTo
+    {
+        return $this->belongsTo(PengajuanPinjaman::class);
+    }
+
+}

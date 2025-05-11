@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:65e52054b05f0a46208d3c4d9de6fb299cf155974510a97c6c5cc535401e7838
-size 337
+
+// Sider color variations
+@mixin slider-color-variant($color) {
+	.noUi-base {
+		.noUi-connect {
+			background: $color;
+		}
+
+		.noUi-origin {
+			background: $color;
+
+			.noUi-handle {
+				&:after {
+					background: $color;
+				}
+
+				.noUi-tooltip {
+					background: $color;
+					color: $white;
+				}
+			}
+		}
+	}
+}

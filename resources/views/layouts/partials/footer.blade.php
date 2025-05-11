@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:419350feff6d40f49e6aec80b70c531d0046d714170093277e479bba08bcb0c4
-size 471
+<footer class="footer">
+    <div class="container-fluid text-center">
+        <nav class="d-flex justify-content-center">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://www.themekita.com">
+                        Copyright © 2024 Koperasi Konsumen Karlisna PLN Yogyakarta. All Rights Reserved.
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>

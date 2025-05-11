@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:24b54bca875543f147f87c4c42733b429b86ae620eb7d636360b41459628b601
-size 787
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::table('pengajuan_pinjamans', function (Blueprint $table) {
+            $table->decimal('score', 5, 2)->nullable()->after('sisa_jangka_waktu'); // Skor SPK
+            $table->string('level', 50)->nullable()->after('score'); // Level SPK
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::table('pengajuan_pinjamans', function (Blueprint $table) {
+            $table->dropColumn(['score', 'level']);
+        });
+    }
+};

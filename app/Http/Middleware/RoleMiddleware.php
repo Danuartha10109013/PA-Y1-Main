@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:61c367fd753c695a2247815ce7a6ddc53037f7e245f82475a377068c4a2cc3e1
-size 701
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+class RoleMiddleware
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     */
+    public function handle(Request $request, Closure $next, $roles): Response
+    {
+
+        if (!$request->user()->hasRole($roles)) {
+            return abort(403, 'Unauthorized');
+        }
+
+        // Jika user memiliki role yang dibutuhkan, izinkan request untuk dilanjutkan
+        return $next($request); // Diasumsikan ini ada di dalam middleware
+    }
+}

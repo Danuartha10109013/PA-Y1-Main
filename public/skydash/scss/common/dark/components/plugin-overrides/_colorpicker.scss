@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aef098ce41b55e7f8ebe42c47d81bb062e7bf67c2547b67186045f84f8c01d77
-size 311
+/* Colorpicker */
+
+.asColorPicker-dropdown {
+  max-width: initial;
+}
+.asColorPicker-trigger{
+    height: auto;
+    border: 0;
+    span {
+      border-radius: 2px;
+      width: 35px;
+    }
+}
+
+.asColorPicker-input {
+  @extend .form-control;
+}
+
+.asColorPicker-wrap {
+  @extend .input-group;
+}

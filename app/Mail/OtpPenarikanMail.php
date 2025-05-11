@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6f10552a740a64126a781400501be81ed395ebdb4b4960146365a61d3e361e9c
-size 513
+<?php
+namespace App\Mail;
+
+use Illuminate\Bus\Queueable;
+use Illuminate\Mail\Mailable;
+use Illuminate\Queue\SerializesModels;
+
+class OtpPenarikanMail extends Mailable
+{
+    use Queueable, SerializesModels;
+
+    public $penarikan;
+
+    public function __construct($penarikan)
+    {
+        $this->penarikan = $penarikan;
+    }
+
+    public function build()
+    {
+        return $this->subject('Kode OTP Penarikan Simpanan '.$this->penarikan->no_penarikan)
+                    ->view('email.otp_penarikan');
+    }
+}

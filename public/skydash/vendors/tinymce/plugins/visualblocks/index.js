@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b086c3391bd1b051ff079362e70a78f063d317c829aa1683861dc61a9b9b7452
-size 226
+// Exports the "visualblocks" plugin for usage with module loaders
+// Usage:
+//   CommonJS:
+//     require('tinymce/plugins/visualblocks')
+//   ES2015:
+//     import 'tinymce/plugins/visualblocks'
+require('./plugin.js');

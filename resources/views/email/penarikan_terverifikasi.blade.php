@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f2514198ee6620d3d54b7c3c37eeab263bc9e905ceed266cc084bb07bc6fa1f7
-size 736
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Penarikan Dana Diverifikasi</title>
+</head>
+<body>
+    <h3>Penarikan Telah Diverifikasi</h3>
+    <p>Halo {{ $users->name }},</p>
+
+    <p>Penarikan dana Anda dengan detail berikut telah diverifikasi:</p>
+
+    <ul>
+        <li><strong>No. Penarikan:</strong> {{ $penarikan->no_penarikan }}</li>
+        <li><strong>Jumlah:</strong> Rp{{ number_format($penarikan->nominal, 0, ',', '.') }}</li>
+        <li><strong>Bank Tujuan:</strong> {{ $penarikan->bank }}</li>
+        <li><strong>Status:</strong> {{ ucfirst($penarikan->status) }}</li>
+    </ul>
+
+    <p>Saldo Anda sedang diproses dan akan segera dikirim ke rekening tujuan.</p>
+
+    <p>Terima kasih.</p>
+</body>
+</html>

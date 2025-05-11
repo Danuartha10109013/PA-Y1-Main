@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3e7622f07a10cb5d996f530e445a663622dc3c238115afa21441da65c3cf413c
-size 648
+define("ace/snippets/csound_document",["require","exports","module"],function(e,t,n){"use strict";t.snippetText="# <CsoundSynthesizer>\nsnippet synth\n	<CsoundSynthesizer>\n	<CsInstruments>\n	${1}\n	</CsInstruments>\n	<CsScore>\n	e\n	</CsScore>\n	</CsoundSynthesizer>\n",t.scope="csound_document"});                (function() {
+                    window.require(["ace/snippets/csound_document"], function(m) {
+                        if (typeof module == "object" && typeof exports == "object" && module) {
+                            module.exports = m;
+                        }
+                    });
+                })();
+            

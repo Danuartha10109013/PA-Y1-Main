@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:266e26ca14af85bb038ff31363af571d29ff5ab05a63ae16db2522bffc59ec4c
-size 824
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class AddApprovalBendaharaToAnggotaTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('anggota', function (Blueprint $table) {
+            $table->string('status_bendahara', 255)->default('Pengajuan')->after('status_ketua'); // Ganti 'kolom_terakhir' dengan kolom yang ada sebelum kolom baru ini
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('anggota', function (Blueprint $table) {
+            $table->dropColumn('approval_bendahara');
+        });
+    }
+}

@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eb83a8c9576f46786d4faa2ffc2d97e8b5acd3c27336b11232bee2c4d4eec7d6
-size 939
+@extends('layouts.dashboard-layout')
+@section('title', $title)
+@section('content')
+    <div class="content-background" style="background: white">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead bgcolor="EEEEEE">
+                    <tr>
+                        <th>Nama Anggota</th>
+                        <th>Kriteria</th>
+                        <th>Nilai</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($spks as $key => $spk)
+                        <tr>
+                            <td>{{ $spk->pinjamans->nomor_pinjaman }}</td>
+                            <td>{{ $spk->score }}</td>
+                            <td>{{ $spk->level }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+@endsection

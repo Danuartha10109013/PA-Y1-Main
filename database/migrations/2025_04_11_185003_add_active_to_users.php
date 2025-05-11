@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bec3b80d7106afd4ef55ac19ab5703af7c759234a004b543ef1c13779f821a39
-size 580
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+public function up()
+{
+    Schema::table('users', function (Blueprint $table) {
+        $table->string('active')->default('1')->after('anggota_id'); // Ganti 'column_name' dengan nama kolom terakhir atau kolom tertentu.
+    });
+}
+
+public function down()
+{
+    Schema::table('users', function (Blueprint $table) {
+        $table->dropColumn('active');
+    });
+}
+
+};

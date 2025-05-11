@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:66354d483ca4ed79dca55117c8a1a1d96bcad4b3f20d7bbb626043fa84c6ecdb
-size 824
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('pinjaman_emergencies', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->restrictOnUpdate()->restrictOnDelete();
+            $table->integer('amount');
+            $table->string('status');
+            $table->string('keterangan')->default('Pending');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('pinjaman_emergencies');
+    }
+};

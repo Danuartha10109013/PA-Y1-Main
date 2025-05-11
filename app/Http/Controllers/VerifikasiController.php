@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:00361ccbe5c5a4b4ee8603712c13e9b2f2b2bc918c50b453e9c970a23dae3995
-size 224
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class VerifikasiController extends Controller
+{
+    public function verifikasi()
+    {
+        return view('auth.verifikasi_regis');
+    }
+}

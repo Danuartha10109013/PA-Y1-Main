@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f59cf7da1d1bc127545e073ed65ee1ff5ef877431fdd69206cf769d99d02ec64
-size 204
+// Exports the "mobile" theme for usage with module loaders
+// Usage:
+//   CommonJS:
+//     require('tinymce/themes/mobile')
+//   ES2015:
+//     import 'tinymce/themes/mobile'
+require('./theme.js');

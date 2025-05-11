@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2c41da5c989f2ca954953940b353d301fd197bda6185064111819547f2215633
-size 1245
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreatePenarikanBerjangkaTable extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+{
+    Schema::create('penarikan_berjangka', function (Blueprint $table) {
+        $table->id();
+        $table->string('no_penarikan')->unique(); // Nomor simpanan unik
+        $table->foreignId('user_id')->constrained('users')->onDelete('cascade'); // Relasi ke tabel users
+        $table->string('bank'); // Nama bank
+        $table->bigInteger('nominal'); // Nominal penarikan
+        $table->string('status_manager')->default('pending'); // Status manager: pending, approved, rejected
+        $table->string('status_ketua')->default('pending'); // Status ketua: pending, approved, rejected
+        $table->string('otp_code'); // Kolom OTP wajib diisi
+        $table->timestamp('otp_expired_at'); // Waktu expired wajib diisi
+        $table->timestamps(); // created_at, updated_at
+    });
+}
+
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('penarikan_berjangka');
+    }
+}

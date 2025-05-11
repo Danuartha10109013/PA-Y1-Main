@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4a2355dce3e15f0946d6dc48ad64c28b4bf662c9394f9239065cda427433ec48
-size 802
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class AddApprovalBendaharaToRekeningSimpananBerjangkaTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('rekening_simpanan_berjangka', function (Blueprint $table) {
+            $table->string('approval_bendahara')->nullable()->after('approval_manager');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('rekening_simpanan_berjangka', function (Blueprint $table) {
+            $table->dropColumn('approval_bendahara');
+        });
+    }
+}

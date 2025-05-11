@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:477a6a6184d4cb7c672b417d084b7a8979318a2d901a7090c63cc56bcec8f3bd
-size 542
+/* Miscellanoeous */
+body,
+html {
+  overflow-x: hidden;
+  padding-right: 0 !important; // resets padding right added by Bootstrap modal
+}
+
+*:-moz-full-screen,
+*:-webkit-full-screen,
+*:fullscreen *:-ms-fullscreen {
+  overflow: auto;
+}
+
+.container-scroller {
+  overflow: hidden;
+}
+
+pre {
+  background: color(gray-lighter);
+  padding: 15px;
+  font-size: 14px;
+}
+
+code {
+  padding: 5px;
+  color: theme-color(danger);
+  font-family: $type1;
+  font-weight: 300;
+  font-size: $default-font-size;
+  border-radius: 4px;
+}

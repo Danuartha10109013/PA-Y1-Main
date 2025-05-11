@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:600a839ccf183d55870bf24b8eaf7d9d4716d20a06277114aa0e7764185eec0b
-size 354
+/* Badges */
+
+.badge {
+  border-radius: 20px;
+  font-size: 12px;
+  line-height: 1;
+  padding: .375rem .5625rem;
+  font-weight: normal;
+  &.badge-pill {
+    border-radius: 10rem;
+  }
+}
+
+/*Badge outlined variations*/
+@each $color, $value in $theme-colors {
+  .badge-outline-#{$color} {
+    @include badge-outline-variations($value);
+  }
+}

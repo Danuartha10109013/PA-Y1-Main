@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c00c34ae176350e20334d28f1217bb5e3942454c8ef02ec1b5470b7ab57e9a69
-size 816
+@extends('layouts.dashboard-layout')
+@section('title', $title)
+@section('content')
+    <div class="content-background col-md-6">
+        <form action="{{ route('potongan.gaji.store.sw', $pinjamanAktif->id) }}" method="post" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group">
+                <label for="bukti_pembayaran">Upload Bukti Pemotongan Gaji</label>
+                <input type="file" id="bukti_pembayaran" name="bukti_pembayaran" class="form-control">
+            </div>
+            <div class="text-center">
+                <a href="{{ route('data.potongan.gaji.sw') }}" class="btn btn-secondary">Batalkan</a>
+                <button type="submit" class="btn btn-success">Upload</button>
+            </div>
+        </form>        
+    </div>
+@endsection

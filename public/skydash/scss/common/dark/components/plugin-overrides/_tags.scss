@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:90ffc040aaf9f1459cbb7064c1ed089a8463a2b683bd23fd89950c3731e8aae3
-size 364
+/* Tags */
+
+div.tagsinput {
+  padding: 15px 15px 10px;
+  border-color: $border-color;
+  background: transparent;
+  span.tag {
+    background: theme-color(primary);
+    border: 0;
+    color: color(white);
+    padding: 6px 14px;
+    font-size: .8125rem;
+    font-family: inherit;
+    line-height: 1;
+    a {
+      color: color(white);
+    }
+  }
+}

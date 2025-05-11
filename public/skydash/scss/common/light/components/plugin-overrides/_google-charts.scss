@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4571ba7cf9250604ac540dd065f3cf80f0f1e1e5689dc48bb6c43e32d01cbd3f
-size 162
+/* Google Charts */
+
+.google-chart-container {
+  .google-charts {
+    width: 100%;
+    height: 280px;
+    min-height: 280px;
+    min-width: 100%;
+  }
+}

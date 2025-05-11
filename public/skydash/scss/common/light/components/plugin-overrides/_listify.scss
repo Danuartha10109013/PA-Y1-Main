@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1062d54d34c15d43e9ddc4160ea093262eb084dfb091284dac2150a4af13a4c5
-size 462
+/* Listify */
+
+.listify-list{
+  input{
+    border: 1px solid $white-smoke;
+    color: color(gray-light);
+    background: #fff;
+  }
+  button{
+
+  }
+  ul.list{
+    list-style: none;
+    padding-left: 0;
+    li{
+      display: block;
+      border-bottom: $border-property;
+      padding: 15px 10px;
+      h5{
+        color: theme-color("primary");
+      }
+      p{
+        color: color(gray-light);
+        margin: 0;
+      }
+    }
+  }
+}

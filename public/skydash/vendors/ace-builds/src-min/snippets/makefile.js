@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f6266ccb904c567f7c99981b16060cfa429a4a9d426c6cd976edda29d32b6248
-size 537
+define("ace/snippets/makefile",["require","exports","module"],function(e,t,n){"use strict";t.snippetText="snippet ifeq\n	ifeq (${1:cond0},${2:cond1})\n		${3:code}\n	endif\n",t.scope="makefile"});                (function() {
+                    window.require(["ace/snippets/makefile"], function(m) {
+                        if (typeof module == "object" && typeof exports == "object" && module) {
+                            module.exports = m;
+                        }
+                    });
+                })();
+            

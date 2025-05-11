@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:056923388cd37860a853bd4dac94df70ff28dba6426ada064f037ada34865df1
-size 961
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+class RedirectController extends Controller
+{
+    public function redirect()
+    {
+        // Ambil role user yang sedang login
+        $role = Auth::user()->roles;
+
+        // Redirect berdasarkan role
+        switch ($role) {
+            case 'bendahara':
+                return redirect()->route('bendahara.index');
+            case 'anggota':
+                return redirect()->route('home-anggota');
+            case 'manager':
+                return redirect()->route('home.manager');
+            case 'ketua':
+                return redirect()->route('home-ketua');
+            case 'admin':
+                return redirect()->route('home-admin');
+            default:
+                // Jika tidak ada role yang sesuai, redirect ke halaman utama
+                return redirect()->route('home');
+        }
+    }
+}

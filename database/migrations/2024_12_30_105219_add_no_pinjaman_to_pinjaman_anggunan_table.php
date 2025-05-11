@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3ee4fbbff61ecd5f0b094f217b239259c6b68be9fbd045ab2eb5579986f095bc
-size 682
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up()
+    {
+        Schema::table('pinjaman_angunans', function (Blueprint $table) {
+            $table->string('no_pinjaman')->unique()->after('id');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('pinjaman_angunans', function (Blueprint $table) {
+            $table->dropColumn('no_pinjaman');
+        });
+    }
+};

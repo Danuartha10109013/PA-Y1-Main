@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2b56fb66d0bcc14abd5dee49bd44898cb137a54bc14bf85e72ddaec27adc85ba
-size 223
+// Exports the "visualchars" plugin for usage with module loaders
+// Usage:
+//   CommonJS:
+//     require('tinymce/plugins/visualchars')
+//   ES2015:
+//     import 'tinymce/plugins/visualchars'
+require('./plugin.js');
