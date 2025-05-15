@@ -310,9 +310,14 @@
                                         <div class="form-group position-relative">
                                             <label for="nama_bank">Nama Bank</label>
                                             <div class="input-group">
-                                                <input type="text" class="form-control" id="nama_bank"
-                                                    name="nama_bank" required>
+                                                <select class="form-control" id="nama_bank" name="nama_bank" required>
+                                                    <option value="">-- Pilih Bank --</option>
+                                                    @foreach (['BRI', 'BCA', 'BNI', 'MANDIRI', 'BTN', 'CIMB Niaga', 'Bukopin', 'Danamon'] as $bank)
+                                                        <option value="{{ $bank }}" {{ old('nama_bank') == $bank ? 'selected' : '' }}>{{ $bank }}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
+
                                             @error('nama_bank')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
