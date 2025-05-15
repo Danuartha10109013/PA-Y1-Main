@@ -50,6 +50,45 @@
                     </tbody>
                 </table>
             </div>
+            History 
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>History</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                            @php
+                                $tenor = json_decode($pengajuanPinjaman->tenor);
+                            @endphp
+
+                                @if ($tenor)
+                                @foreach ($tenor as $t)
+                        <tr>
+                            <td>{{$loop->iteration}}</td>
+                            <td>
+                                    <p>{{ $t->bulan }}</p>
+                            </td>
+
+                                    <td>
+
+                                        @if ($t->status == 0)
+                                            <a href="{{ route('input.potongan.gaji.create', ['uuid' => $pengajuanPinjaman->uuid, 'month' => $t->bulan ]) }}"><p class="text text-danger">Belum Dibayar</p></a>
+                                        @else
+                                        <p class="text text-success">Sudah Dibayarkan</p>
+                                        @endif
+                                    </td>
+                                @endforeach
+                                @else
+                                <p><i>Data tenor tidak tersedia.</i></p>
+                                @endif
+                        </tr>
+                    
+                </tbody>
+            </table>
             <a href="{{ route('data.potongan.gaji') }}" class="btn btn-primary">Kembali</a>
         </div>
 
