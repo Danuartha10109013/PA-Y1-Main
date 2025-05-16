@@ -1,33 +1,3 @@
-<?php
-
-namespace Database\Seeders;
-
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-
-use Illuminate\Database\Seeder;
-use Database\Seeders\UserSeeder;
-use Database\Seeders\TenorSeeder;
-use Database\Seeders\KriteriaSeeder;
-
-
-class DatabaseSeeder extends Seeder
-{
-    /**
-     * Seed the application's database.
-     */
-    public function run(): void
-    {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
-        $this->call([
-            UserSeeder::class,
-            TenorSeeder::class,
-            VirtualAccountSeeder::class,
-        ]);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:fea39ec2e9f6e7eae94ae107bd5728e99f19618d6a4ebf7178b064da8b7c19cd
+size 748
