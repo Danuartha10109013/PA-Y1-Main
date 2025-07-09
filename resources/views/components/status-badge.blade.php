@@ -1,17 +1,3 @@
-@props(['statusKetua','statusBendahara', 'statusManager' ])
-
-    @if ($statusKetua === 'Diterima')
-        <span class="badge badge-border-success">Diterima Ketua</span>
-    @elseif($statusKetua === 'Ditolak')
-        <span class="badge badge-border-danger">Ditolak Ketua</span>
-    @elseif($statusBendahara === 'Diterima')
-        <span class="badge badge-border-warning">Menunggu Approve Ketua</span>
-    @elseif($statusBendahara === 'Ditolak')
-        <span class="badge badge-border-danger">Ditolak Bendahara</span>
-    @elseif($statusManager === 'Diterima')
-        <span class="badge badge-border-warning">Menunggu Approve Ketua</span>
-    @elseif($statusManager === 'Ditolak')
-        <span class="badge badge-border-danger">Ditolak Manager</span>
-    @else
-        <span class="badge badge-border-warning">Pengajuan</span>
-    @endif
+version https://git-lfs.github.com/spec/v1
+oid sha256:73799f77b8fdc568c9482985447663c900476475561ae82836c7dda41c8022cc
+size 850

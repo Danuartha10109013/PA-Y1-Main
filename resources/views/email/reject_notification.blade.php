@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Pemberitahuan Penolakan</title>
-</head>
-<body>
-    <h1>Halo, {{ $name }}</h1>
-    <p>Kami mohon maaf, tetapi permohonan keanggotaan Anda telah ditolak.</p>
-    <p>Alasan Penolakan: {{ $reason }}</p>
-    <p>Terima kasih atas pengertian Anda.</p>
-</body>
-</html>
+version https://git-lfs.github.com/spec/v1
+oid sha256:71c46db221413537727858e9df409918e85f31aba731b818ea92710cb616c555
+size 1682
